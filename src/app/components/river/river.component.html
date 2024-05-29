@@ -1,0 +1,35 @@
+<div>
+  <h1 class="text-2xl font-bold mb-4">Lista Rzek</h1>
+  <button (click)="openModal()" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 mb-4">Dodaj Rzekę</button>
+  <table class="min-w-full bg-white">
+    <thead>
+    <tr>
+      <th class="py-2">ID</th>
+      <th class="py-2">Nazwa</th>
+      <th class="py-2">Długość (km)</th>
+      <th class="py-2">Akcje</th>
+    </tr>
+    </thead>
+    <tbody>
+    @for(river of rivers; track river.id){
+    <tr>
+      <td class="border px-4 py-2">{{ river.id }}</td>
+      <td class="border px-4 py-2">{{ river.name }}</td>
+      <td class="border px-4 py-2">{{ river.length_km }}</td>
+      <td class="border px-4 py-2">
+        <button [routerLink]="['/river', river.id]" class="bg-green-600 text-white px-2 py-1 me-2 rounded hover:bg-green-700">Szczegóły</button>
+        <button (click)="deleteRiver(river.id!)" class="bg-red-600 text-white px-2 py-1 me-2 rounded hover:bg-red-700">Usuń</button>
+        <button (click)="openEditModal(river)" class="bg-yellow-600 text-white px-2 py-1 rounded hover:bg-yellow-700">Edytuj</button>
+      </td>
+    </tr>
+    }
+    </tbody>
+  </table>
+
+  @if(showModal){
+  <app-river-add (riverAdded)="loadRivers()" (closeModal)="closeModal()"></app-river-add>
+  }
+  @if(showEditModal){
+  <app-river-edit [river]="editRiver" (riverUpdated)="loadRivers()" (closeModal)="closeEditModal()"></app-river-edit>
+  }
+</div>

@@ -1,0 +1,23 @@
+@if(town){
+  <div>
+    <h2 class="text-2xl mb-4">Szczegóły Miasta</h2>
+    <p>ID: {{ town.id }}</p>
+    <p>Nazwa: {{ town.name }}</p>
+    <p>Populacja: {{ town.population }}</p>
+
+    <h3 class="text-xl mt-6 mb-2">Rzeki</h3>
+    <ul>
+      @for(river of rivers; track river.id){
+      <li>{{ river.name }} (Długość: {{ river.length_km }} km)</li>
+      }
+    </ul>
+
+    <div class="mt-6">
+      <h3 class="text-xl mb-2">Średnia populacja miast</h3>
+      <p>{{ averagePopulation }}</p>
+
+      <h3 class="text-xl mb-2">Łączna liczba unikalnych rzek</h3>
+      <p>{{ totalRivers }}</p>
+    </div>
+  </div>
+}

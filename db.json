@@ -1,0 +1,78 @@
+{
+  "countries": [
+    {
+      "id": "1",
+      "name": "Polska"
+    }
+  ],
+  "towns": [
+    {
+      "id": "1",
+      "name": "Warszawa",
+      "population": 1790658,
+      "country_id": 1,
+      "rivers": [
+        "1"
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Kraków",
+      "population": 779115,
+      "country_id": 1,
+      "rivers": [
+        "1",
+        "2"
+      ]
+    },
+    {
+      "id": "3",
+      "name": "Wrocław",
+      "population": 641607,
+      "country_id": 1,
+      "rivers": [
+        2
+      ]
+    },
+    {
+      "id": "4",
+      "name": "Gdańsk",
+      "population": 470907,
+      "country_id": 1,
+      "rivers": [
+        3
+      ]
+    },
+    {
+      "id": "5",
+      "name": "Poznań",
+      "population": 534813,
+      "country_id": 1,
+      "rivers": [
+        4
+      ]
+    }
+  ],
+  "rivers": [
+    {
+      "id": "1",
+      "name": "Wisła",
+      "length_km": 1047
+    },
+    {
+      "id": "2",
+      "name": "Odra",
+      "length_km": 855
+    },
+    {
+      "id": "3",
+      "name": "Motława",
+      "length_km": 64
+    },
+    {
+      "id": "4",
+      "name": "Warta",
+      "length_km": 808
+    }
+  ]
+}

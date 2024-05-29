@@ -1,0 +1,25 @@
+<div class="fixed inset-0 bg-gray-600 bg-opacity-50 flex items-center justify-center">
+  <div class="bg-white p-8 rounded-lg">
+    <h2 class="text-2xl mb-4">Edytuj Miasto</h2>
+    <label for="name" class="block mb-2">Nazwa:</label>
+    <input [(ngModel)]="town.name" id="name" class="border px-4 py-2 mb-4 w-full" />
+    <label for="population" class="block mb-2">Populacja:</label>
+    <input [(ngModel)]="town.population" id="population" type="number" class="border px-4 py-2 mb-4 w-full" />
+    <label for="country_id" class="block mb-2">Kraj:</label>
+    <select [(ngModel)]="town.country_id" id="country_id" class="border px-4 py-2 mb-4 w-full">
+      @for(country of countries; track country.id){
+      <option [value]="country.id">{{ country.name }}</option>
+      }
+    </select>
+    <label for="rivers" class="block mb-2">Rzeki:</label>
+    <select multiple [(ngModel)]="town.rivers" id="rivers" class="border px-4 py-2 mb-4 w-full">
+      @for(river of rivers; track river.id){
+      <option [value]="river.id">{{ river.name }}</option>
+      }
+    </select>
+    <div class="flex justify-end">
+      <button (click)="updateTown()" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Zapisz</button>
+      <button (click)="close()" class="ml-2 bg-gray-600 text-white px-4 py-2 rounded hover:bg-gray-700">Anuluj</button>
+    </div>
+  </div>
+</div>

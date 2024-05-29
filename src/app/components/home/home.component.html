@@ -1,0 +1,16 @@
+<div class="text-center">
+  <h1 class="text-4xl font-bold mb-4">Witamy w Angular Web 2.0</h1>
+  <p class="text-lg mb-6">Autor: Łukasz Czech</p>
+
+  <button (click)="toggleInfo()" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 mt-4">Pokaż/Ukryj Informacje</button>
+
+  <div *appShowIf="showInfo" class="mt-6">
+  <h2 class="text-2xl font-semibold mb-4">Zapraszamy do poszczególnych modułów:</h2>
+
+  <div class="mt-6 space-x-4">
+    <a routerLink="/countries" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Kraje</a>
+    <a routerLink="/towns" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Miasta</a>
+    <a routerLink="/rivers" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Rzeki</a>
+  </div>
+  </div>
+</div>

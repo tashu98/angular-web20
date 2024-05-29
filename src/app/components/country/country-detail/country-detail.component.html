@@ -1,0 +1,14 @@
+@if(country){
+  <div>
+    <h2 class="text-2xl mb-4">Szczegóły Kraju</h2>
+    <p>ID: {{ country.id }}</p>
+    <p>Nazwa: {{ country.name }}</p>
+
+    <h3 class="text-xl mt-6 mb-2">Miasta</h3>
+    <ul>
+      @for(town of towns; track town.id){
+        <li>{{ town.name }} (Population: {{ town.population }})</li>
+      }
+    </ul>
+  </div>
+}
