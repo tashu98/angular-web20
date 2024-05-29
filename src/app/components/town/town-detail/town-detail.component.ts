@@ -4,11 +4,14 @@ import {Town} from "../../../models/town";
 import {River} from "../../../models/river";
 import {ActivatedRoute} from "@angular/router";
 import {RiverService} from "../../../services/river.service";
+import {DecimalPipe} from "@angular/common";
 
 @Component({
   selector: 'app-town-detail',
   standalone: true,
-  imports: [],
+  imports: [
+    DecimalPipe
+  ],
   templateUrl: './town-detail.component.html',
   styleUrl: './town-detail.component.css'
 })
