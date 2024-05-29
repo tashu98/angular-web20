@@ -1,6 +1,5 @@
 import { Routes } from '@angular/router';
 import {HomeComponent} from "./components/home/home.component";
-import {LayoutComponent} from "./components/layout/layout.component";
 import {CountryComponent} from "./components/country/country.component";
 import {CountryDetailComponent} from "./components/country/country-detail/country-detail.component";
 import {TownComponent} from "./components/town/town.component";
